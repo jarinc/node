@@ -113,6 +113,23 @@ app.get('/test', function (req, res) {
   res.render('test.html');
 });
 
+
+// /data/ // ++++++++++++++++++++++++++++++ // start
+app.get('/data', function (req, res) {
+  // try to initialize the db on every request if it's not already
+  // initialized.
+  if (!db) {
+    initDb(function(err){});
+  }
+  if (db) {
+    // show all data
+    res.render('data.html', { dbInfo: dbDetails });
+  } else {
+    res.render('data.html', { dbInfo : null});
+  }
+});
+// /data/ // ++++++++++++++++++++++++++++++ // end
+
 // error handling
 app.use(function(err, req, res, next){
   console.error(err.stack);
