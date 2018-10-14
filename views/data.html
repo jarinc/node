@@ -5,7 +5,11 @@
   
   <body>
     <h1>show all data</h1>
-    <%= dbInfo.type %>
+    <% if( myDB == null ) { %>
+      no data
+    <% } else { %>
+      <%= myDB.getCollectionNames() %>
+    <% }  %>
   </body>
   
 </html>
