@@ -123,9 +123,9 @@ app.get('/data', function (req, res) {
   }
   if (db) {
     // show all data
-    res.render('data.html', { dbInfo: dbDetails });
+    res.render('data.html', { myDB : db });
   } else {
-    res.render('data.html', { dbInfo : null});
+    res.render('data.html', { myDB : null});
   }
 });
 // /data/ // ++++++++++++++++++++++++++++++ // end
