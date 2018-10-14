@@ -123,7 +123,7 @@ app.get('/data', function (req, res) {
   }
   if (db) {
     // show all data
-    res.render('data.html', { myDB : db });
+    res.render('data.html', { myDB : db.admin() });
   } else {
     res.render('data.html', { myDB : null});
   }
